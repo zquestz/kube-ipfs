@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: default
+  labels:
+    service: ipfs
+    version: 0.4.9
+  name: ipfs
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        service: ipfs
+    spec:
+      containers:
+      - image: ipfs/go-ipfs:latest
+        name: ipfs
+        volumeMounts:
+          - mountPath: /data/ipfs
+            name: ipfs-data
+        resources:
+          requests:
+            memory: "1Gi"
+      restartPolicy: Always
+      volumes:
+        - name: ipfs-data
+          gcePersistentDisk:
+            pdName: ipfs-data
+            fsType: ext4

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipfs
+  namespace: default
+spec:
+  ports:
+    - port: 100
+      targetPort: 8080
+  selector:
+    service: ipfs
+  type: NodePort
