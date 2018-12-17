@@ -23,7 +23,7 @@ spec:
             name: ipfs-data
         resources:
           requests:
-            memory: "1Gi"
+            memory: "3Gi"
         ports:
           - name: swarm
             containerPort: 4001
