@@ -24,6 +24,10 @@ spec:
         resources:
           requests:
             memory: "1Gi"
+        readinessProbe:
+          httpGet:
+            port: 8080
+            path: /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
       restartPolicy: Always
       volumes:
         - name: ipfs-data
