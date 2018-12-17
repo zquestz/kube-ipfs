@@ -24,6 +24,15 @@ spec:
         resources:
           requests:
             memory: "1Gi"
+        ports:
+          - name: swarm
+            containerPort: 4001
+          - name: api
+            containerPort: 5001
+          - name: web
+            containerPort: 8080
+          - name: swarm-ws
+            containerPort: 8081
         readinessProbe:
           httpGet:
             port: 8080
