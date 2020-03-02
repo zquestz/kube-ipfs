@@ -4,7 +4,7 @@ metadata:
   namespace: default
   labels:
     service: ipfs
-    version: 0.4.9
+    version: 0.4.23
   name: ipfs
 spec:
   strategy:
