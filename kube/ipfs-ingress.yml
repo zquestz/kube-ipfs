@@ -18,7 +18,17 @@ spec:
   - host: ipfs.greyh.at
     http:
       paths:
-      - path: /
+      - path: /ipfs/QmQECm1yUgKh7oQg2syCFo5BLvhFSSH9m95fw41b3GTrXV
         backend:
           serviceName: ipfs
           servicePort: 100
+      - path: /ipfs/QmXkBQJrMKkCKNbwv4m5xtnqwU9Sq7kucPigvZW8mWxcrv
+        backend:
+          serviceName: ipfs
+          servicePort: 100
+      - path: /ipfs/QmZQFi5kiY1cAu6hEpLCEaAZ3FX1CtmFVtE8DiLvkYNg62
+        backend:
+          serviceName: ipfs
+          servicePort: 100
+
+
