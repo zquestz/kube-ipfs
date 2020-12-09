@@ -19,7 +19,14 @@ spec:
         service: ipfs
     spec:
       containers:
-      - image: ipfs/go-ipfs:latest
+      - args:
+        - daemon
+        - --enable-gc
+        - --migrate
+        command:
+        - ipfs
+        image: ipfs/go-ipfs:v0.7.0
+        imagePullPolicy: Always
         name: ipfs
         volumeMounts:
           - mountPath: /data/ipfs
