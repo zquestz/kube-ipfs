@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ipfs-ingress
@@ -11,22 +11,33 @@ spec:
   - hosts:
     - ipfs.greyh.at
     secretName: ipfs-tls
-  backend:
-    serviceName: ipfs
-    servicePort: 100
+  defaultBackend:
+    service:
+      name: ipfs
+      port:
+        number: 100
   rules:
   - host: ipfs.greyh.at
     http:
       paths:
       - path: /ipfs/QmQECm1yUgKh7oQg2syCFo5BLvhFSSH9m95fw41b3GTrXV
+        pathType: ImplementationSpecific
         backend:
-          serviceName: ipfs
-          servicePort: 100
+          service:
+            name: ipfs
+            port:
+              number: 100
       - path: /ipfs/QmXkBQJrMKkCKNbwv4m5xtnqwU9Sq7kucPigvZW8mWxcrv
+        pathType: ImplementationSpecific
         backend:
-          serviceName: ipfs
-          servicePort: 100
+          service:
+            name: ipfs
+            port:
+              number: 100
       - path: /ipfs/QmZQFi5kiY1cAu6hEpLCEaAZ3FX1CtmFVtE8DiLvkYNg62
+        pathType: ImplementationSpecific
         backend:
-          serviceName: ipfs
-          servicePort: 100
+          service:
+            name: ipfs
+            port:
+              number: 100
