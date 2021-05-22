@@ -20,21 +20,7 @@ spec:
   - host: ipfs.greyh.at
     http:
       paths:
-      - path: /ipfs/QmQECm1yUgKh7oQg2syCFo5BLvhFSSH9m95fw41b3GTrXV
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: ipfs
-            port:
-              number: 100
-      - path: /ipfs/QmXkBQJrMKkCKNbwv4m5xtnqwU9Sq7kucPigvZW8mWxcrv
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: ipfs
-            port:
-              number: 100
-      - path: /ipfs/QmZQFi5kiY1cAu6hEpLCEaAZ3FX1CtmFVtE8DiLvkYNg62
+      - path: /
         pathType: ImplementationSpecific
         backend:
           service:
