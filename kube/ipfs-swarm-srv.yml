@@ -10,9 +10,15 @@ spec:
     - name: swarm
       port: 4001
       targetPort: 4001
+      protocol: TCP
+    - name: swarm-udp
+      port: 4001
+      targetPort: 4001
+      protocol: UDP
     - name: websockets
       port: 8081
       targetPort: 8081
+      protocol: TCP
   selector:
     service: ipfs
   type: LoadBalancer
