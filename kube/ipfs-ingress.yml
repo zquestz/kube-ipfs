@@ -22,8 +22,43 @@ spec:
         paths:
           - backend:
               service:
+                name: greyhat
+                port:
+                  number: 201
+            path: /
+            pathType: ImplementationSpecific
+          - backend:
+              service:
                 name: ipfs
                 port:
                   number: 100
-            path: /
+            path: /ipfs/Qmb71z6NjPzT4pSZGMTCkH1hEKg9vGTzqnBNfAd3tWeBNu
+            pathType: ImplementationSpecific
+          - backend:
+              service:
+                name: ipfs
+                port:
+                  number: 100
+            path: /ipfs/QmUaDJGNfv9iUBxFApbszwGgfcPo7er58ESgGyVdZYyVfp
+            pathType: ImplementationSpecific
+          - backend:
+              service:
+                name: ipfs
+                port:
+                  number: 100
+            path: /ipfs/QmY9Anst9NB42RVSGZehNCF52B2DxAzAYXEPrLrar75VMT
+            pathType: ImplementationSpecific
+          - backend:
+              service:
+                name: greyhat
+                port:
+                  number: 201
+            path: /ipfs
+            pathType: ImplementationSpecific
+          - backend:
+              service:
+                name: greyhat
+                port:
+                  number: 201
+            path: /ipns
             pathType: ImplementationSpecific
