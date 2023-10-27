@@ -8,64 +8,22 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   tls:
-  - hosts:
-    - ipfs.greyh.at
-    secretName: ipfs-tls
+    - hosts:
+        - ipfs.greyh.at
+      secretName: ipfs-tls
   defaultBackend:
     service:
       name: ipfs
       port:
         number: 100
   rules:
-  - host: ipfs.greyh.at
-    http:
-      paths:
-      - backend:
-          service:
-            name: greyhat
-            port:
-              number: 201
-        path: /
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: greyhat
-            port:
-              number: 201
-        path: /ipfs/QmXjNSyszjrh9jC2m1c1pgmgA9VmXtabxRTKV2y4xrF4Te
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: ipfs
-            port:
-              number: 100
-        path: /ipfs/Qmb71z6NjPzT4pSZGMTCkH1hEKg9vGTzqnBNfAd3tWeBNu
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: ipfs
-            port:
-              number: 100
-        path: /ipfs/QmUaDJGNfv9iUBxFApbszwGgfcPo7er58ESgGyVdZYyVfp
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: ipfs
-            port:
-              number: 100
-        path: /ipfs/QmY9Anst9NB42RVSGZehNCF52B2DxAzAYXEPrLrar75VMT
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: greyhat
-            port:
-              number: 201
-        path: /ipfs
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: greyhat
-            port:
-              number: 201
-        path: /ipns
-        pathType: ImplementationSpecific
+    - host: ipfs.greyh.at
+      http:
+        paths:
+          - backend:
+              service:
+                name: ipfs
+                port:
+                  number: 100
+            path: /
+            pathType: ImplementationSpecific

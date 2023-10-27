@@ -19,34 +19,34 @@ spec:
         service: ipfs
     spec:
       containers:
-      - args:
-        - daemon
-        - --enable-gc
-        - --migrate
-        command:
-        - ipfs
-        image: ipfs/kubo:release
-        imagePullPolicy: Always
-        name: ipfs
-        volumeMounts:
-          - mountPath: /data/ipfs
-            name: ipfs-data
-        resources:
-          requests:
-            memory: "5Gi"
-        ports:
-          - name: swarm
-            containerPort: 4001
-          - name: api
-            containerPort: 5001
-          - name: web
-            containerPort: 8080
-          - name: swarm-ws
-            containerPort: 8081
-        readinessProbe:
-          httpGet:
-            port: 8080
-            path: /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
+        - args:
+            - daemon
+            - --enable-gc
+            - --migrate
+          command:
+            - ipfs
+          image: ipfs/kubo:release
+          imagePullPolicy: Always
+          name: ipfs
+          volumeMounts:
+            - mountPath: /data/ipfs
+              name: ipfs-data
+          resources:
+            requests:
+              memory: "5Gi"
+          ports:
+            - name: swarm
+              containerPort: 4001
+            - name: api
+              containerPort: 5001
+            - name: web
+              containerPort: 8080
+            - name: swarm-ws
+              containerPort: 8081
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
       restartPolicy: Always
       volumes:
         - name: ipfs-data
